@@ -1,0 +1,41 @@
+@import url(./main.css);
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(var(--glass-color), 0.3);
+    width: calc((var(--width)) * 0.4);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    font-family: var(--font);
+    font-size: var(--text-size);
+}
+
+form label{
+    display: flex;
+    flex-direction: column;
+}
+
+form label input,
+form button{
+    outline: none;
+    border: none;
+    padding: 0.6rem;
+    border-radius: var(--small-border-radius);
+    background: rgba(var(--primary-color-tr), 0.3);
+    color: var(--secondary-color);
+}
+
+form button{
+    margin: 2rem 0 0 0;
+    background: rgba(var(--primary-color-tr), 1);
+}
+
+form button:hover{
+    background: rgba(var(--primary-color-tr), 0.7)
+}
+
+form span{
+    margin: 2rem 0 0 0;
+}
