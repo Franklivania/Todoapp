@@ -15,24 +15,27 @@ form{
 form label{
     display: flex;
     flex-direction: column;
+    margin: 0.5rem 0;
+    color: rgba(var(--glass-color), 1);
 }
 
 form label input,
-form button{
+form input{
     outline: none;
     border: none;
     padding: 0.6rem;
     border-radius: var(--small-border-radius);
     background: rgba(var(--primary-color-tr), 0.3);
     color: var(--secondary-color);
+    font-size: var(--text-size);
 }
 
-form button{
+form #login{
     margin: 2rem 0 0 0;
     background: rgba(var(--primary-color-tr), 1);
 }
 
-form button:hover{
+form #login:hover{
     background: rgba(var(--primary-color-tr), 0.7)
 }
 
