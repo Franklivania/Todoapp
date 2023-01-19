@@ -3,7 +3,7 @@ function login() {
     const usernameEmail = document.getElementById('username-email').value
     const password = document.getElementById('login-password').value
 
-    window.location.href = "Dashboard.html"
+    window.location.href = "./Pages/Dashboard.html";
 }
 
 function signup() {
@@ -19,7 +19,7 @@ function signup() {
         password: password
     };
 
-    window.location.href = "Dashboard.html";
+    window.location.href = "./Dashboard.html";
     
 }
 
@@ -29,17 +29,10 @@ function validateEmail(email) {
 }
 
 function logout() {
-    window.location.href = "Signup.html";
+    window.location.href = "../index.html";
 }
 
-function displayDate() {
-    let date = new Date()
-    
-    date = date.toString().split(" ")
-    document.querySelector('#date').innerHTML = "It is;" + " " + date[1] + " " + date[2]+ " " + date[3]
-    console.log=(date)
-}
+// const loginBtn = document.querySelector('#login')
+// loginBtn.addEventListener('click', login)
 
-window.onload = function() {
-    displayDate()
-}
+

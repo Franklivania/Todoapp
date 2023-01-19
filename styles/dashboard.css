@@ -25,10 +25,10 @@
     width: calc((var(--width)) * 0.1);
 }
 
-.root span{
+.root .welcome{
     width: var(--width);
     font-size: var(--large-text);
     font-weight: 800;
     text-align: center;
-    /* background-color: var(--secondary-color) ; */
+    font-style: italic;
 }
