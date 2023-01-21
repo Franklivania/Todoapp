@@ -31,8 +31,3 @@ function validateEmail(email) {
 function logout() {
     window.location.href = "../index.html";
 }
-
-// const loginBtn = document.querySelector('#login')
-// loginBtn.addEventListener('click', login)
-
-

@@ -8,6 +8,10 @@
     color: rgba(var(--glass-color), 1);
 }
 
+/* .update-controller{
+    display: none;
+} */
+
 .root header{
     display: flex;
     align-items: center;
