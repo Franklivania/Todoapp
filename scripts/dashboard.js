@@ -15,17 +15,74 @@ function displayItems(){
                     <div class="input-controller">
                         <textarea disabled>${itemsArray[i]}</textarea>
                         <div class="edit">
-                            <i class="fa-solid fa-trash deletebtn"></i>
-                            <i class="fa-solid fa-pen-to-square editbtn"></i>
+                            <i class="fa-solid fa-trash deleteBtn"></i>
+                            <i class="fa-solid fa-pen-to-square editBtn"></i>
                         </div>
                     </div>
                     <div class="update-controller">
-                        <button class="savebtn">Save</button>
-                        <button class="cancelbtn">Cancel</button>
+                        <button class="saveBtn">Save</button>
+                        <button class="cancelBtn">Cancel</button>
                     </div>
                 </div>`
     } 
     document.querySelector(".to-do-list").innerHTML = items
+    activateDeleteListeners()
+    activateEditListeners()
+    activateSaveListeners()
+    activateCancelListeners()
+}
+
+function activateDeleteListeners(){
+    let deleteBtn = document.querySelectorAll(".deleteBtn")
+    deleteBtn.forEach((db, i) => {
+        db.addEventListener("click", () => {deleteItem(i) })
+    })
+}
+
+function activateEditListeners(){
+    const editBtn = document.querySelectorAll(".editBtn")
+    const updateController = document.querySelectorAll(".update-controller")
+    const inputs = document.querySelectorAll(".input-controller textarea")
+    editBtn.forEach((eb, i) => {
+        eb.addEventListener("click", () => {
+            updateController[i].style.display = "block"
+            inputs[i].disabled = false
+        })
+    })
+}
+
+function activateSaveListeners(){
+    let saveBtn = document.querySelectorAll(".saveBtn")
+    const inputs = document.querySelectorAll(".input-controller textarea")
+    saveBtn.forEach((sb, i) => {
+        sb.addEventListener("click", () => {
+            updateItem(inputs[i].value, i)
+        })
+    })
+}
+
+function activateCancelListeners(){
+    let cancelBtn = document.querySelectorAll(".cancelBtn")
+    const updateController = document.querySelectorAll(".update-controller")
+    const inputs = document.querySelectorAll(".input-controller textarea")
+    cancelBtn.forEach((cb, i) => {
+        cb.addEventListener("click", () => {
+            updateController[i].style.display ="none"
+            inputs[i].disabled = true
+        })
+    })
+}
+
+function updateItem(text, i){
+    itemsArray[i] = text
+    localStorage.setItem("items", JSON.stringify(itemsArray))
+    location.reload()
+}
+
+function deleteItem(i){
+    itemsArray.splice(i, 1)
+    localStorage.setItem("items", JSON.stringify(itemsArray))
+    location.reload()
 }
 
 function createItem(item){
@@ -37,7 +94,7 @@ function createItem(item){
 function displayDate(){
     let date = new Date()
     date = date.toString().split(" ")
-    document.querySelector('#date').innerHTML = date[1] + " " + date[2] + " " + date[3]
+    document.querySelector('#date').innerHTML = date[1] + " " + date[2] + ", " + date[3]
     console.log(date)
 }
 

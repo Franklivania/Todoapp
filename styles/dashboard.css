@@ -8,9 +8,9 @@
     color: rgba(var(--glass-color), 1);
 }
 
-/* .update-controller{
+.update-controller{
     display: none;
-} */
+}
 
 .root header{
     display: flex;
